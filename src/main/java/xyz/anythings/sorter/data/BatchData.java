@@ -13,11 +13,11 @@ public class BatchData {
 	public static int lineNo = 0;
 	String uri = "" /*Constants.getWasIp()*/ + "/data/batch/";
 
-	public BatchData getBatch(int batchId) throws Exception {
+	public BatchEntity getBatch(int batchId) throws Exception {
 		String value = HttpUtil.executeGetMethod(uri + batchId);
 		
 		if (value != null && !value.isEmpty()) {
-			BatchData batch = (BatchData) FormatUtil.jsonToObject(value, BatchData.class);
+			BatchEntity batch = (BatchEntity) FormatUtil.jsonToObject(value, BatchEntity.class);
 
 			return batch;
 		}
