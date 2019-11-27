@@ -151,6 +151,10 @@ public class FileRead {
 		});
 	}
 	
+	void stop() {
+		this.isRunning = false;
+	}
+	
 	private void handleUnkownMessage(String msgObj) {
 		throw new ElidomRuntimeException(msgObj);
 	}

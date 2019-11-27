@@ -154,6 +154,16 @@ public class TcpSocketClientFactory {
 		}
 	}
 	
+	public void send(String address, int port, byte[] message) {
+		TcpSocketClient client = this.getTcpSocketClient(address, port);
+		
+		if(client != null) {
+			client.send(message);
+		} else {
+			throw new ElidomRuntimeException("Not found TCP Client by ID [" + this.generateId(address, port) + "]!");
+		}
+	}
+	
 	public Map<String, String> getClientList() {
 		Set set = clientMap.keySet();
 		 Map<String, String> result = new HashMap<>();
