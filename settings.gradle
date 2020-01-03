@@ -17,5 +17,7 @@ include 'services:webservice'
 
 
 include 'anythings-sys'
+include 'anythings-comm-rabbitmq'
 
 project(':anythings-sys').projectDir = new File(settingsDir, '../anythings-sys')
+project(':anythings-comm-rabbitmq').projectDir = new File(settingsDir, '../anythings-comm-rabbitmq')

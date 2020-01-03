@@ -66,13 +66,14 @@ public class AnythingsLogisSoterInitializer {
 		this.logger.info("Anythings Logistics Sorter module initializing...");
 		
 		this.configSet.addConfig(this.module.getName(), this.module);
+		this.configSet.setApplicationModule(this.module.getName());
 		this.scanServices();
 		
 		// 2. TCP 서버 구동
 		this.startTcpServers();
 		
 		// 3. TCP 클라이언트 구동
-		this.startTcpClients();
+//		this.startTcpClients();
 				
 		this.logger.info("Anythings Logistics Sorter module initialized!");
     }
